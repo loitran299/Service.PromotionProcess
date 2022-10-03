@@ -1,0 +1,318 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.API.csproj": {}
+  },
+  "projects": {
+    "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromontionProcess.BL\\MISA.PromontionProcess.BL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromontionProcess.BL\\MISA.PromontionProcess.BL.csproj",
+        "projectName": "MISA.PromontionProcess.BL",
+        "projectPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromontionProcess.BL\\MISA.PromontionProcess.BL.csproj",
+        "packagesPath": "C:\\Users\\TKF\\.nuget\\packages\\",
+        "outputPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromontionProcess.BL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\TKF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj": {
+                "projectPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj"
+              },
+              "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj": {
+                "projectPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj",
+        "projectName": "MISA.PromotionProcess.Common",
+        "projectPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj",
+        "packagesPath": "C:\\Users\\TKF\\.nuget\\packages\\",
+        "outputPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\TKF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj",
+        "projectName": "MISA.PromotionProcess.DL",
+        "projectPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj",
+        "packagesPath": "C:\\Users\\TKF\\.nuget\\packages\\",
+        "outputPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.DL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\TKF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj": {
+                "projectPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.1.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.API.csproj",
+        "projectName": "MISA.PromotionProcess.API",
+        "projectPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.API.csproj",
+        "packagesPath": "C:\\Users\\TKF\\.nuget\\packages\\",
+        "outputPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.TVL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\TKF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromontionProcess.BL\\MISA.PromontionProcess.BL.csproj": {
+                "projectPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromontionProcess.BL\\MISA.PromontionProcess.BL.csproj"
+              },
+              "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj": {
+                "projectPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj"
+              },
+              "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj": {
+                "projectPath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Core": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.1.13, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

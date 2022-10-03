@@ -1,0 +1,17 @@
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\bin\Debug\net6.0\MISA.PromontionProcess.BL.deps.json
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\bin\Debug\net6.0\MISA.PromontionProcess.BL.dll
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\bin\Debug\net6.0\MISA.PromontionProcess.BL.pdb
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\bin\Debug\net6.0\MISA.PromotionProcess.Common.dll
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\bin\Debug\net6.0\MISA.PromotionProcess.DL.dll
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\bin\Debug\net6.0\MISA.PromotionProcess.Common.pdb
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\bin\Debug\net6.0\MISA.PromotionProcess.DL.pdb
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\obj\Debug\net6.0\MISA.PromontionProcess.BL.csproj.AssemblyReference.cache
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\obj\Debug\net6.0\MISA.PromontionProcess.BL.GeneratedMSBuildEditorConfig.editorconfig
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\obj\Debug\net6.0\MISA.PromontionProcess.BL.AssemblyInfoInputs.cache
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\obj\Debug\net6.0\MISA.PromontionProcess.BL.AssemblyInfo.cs
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\obj\Debug\net6.0\MISA.PromontionProcess.BL.csproj.CoreCompileInputs.cache
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\obj\Debug\net6.0\MISA.PromontionProcess.BL.csproj.CopyComplete
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\obj\Debug\net6.0\MISA.PromontionProcess.BL.dll
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\obj\Debug\net6.0\refint\MISA.PromontionProcess.BL.dll
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\obj\Debug\net6.0\MISA.PromontionProcess.BL.pdb
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromontionProcess.BL\obj\Debug\net6.0\ref\MISA.PromontionProcess.BL.dll

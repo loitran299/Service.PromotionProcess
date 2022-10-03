@@ -1,0 +1,15 @@
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\bin\Debug\net6.0\MISA.PromotionProcess.DL.deps.json
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\bin\Debug\net6.0\MISA.PromotionProcess.DL.dll
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\bin\Debug\net6.0\MISA.PromotionProcess.DL.pdb
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\bin\Debug\net6.0\MISA.PromotionProcess.Common.dll
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\bin\Debug\net6.0\MISA.PromotionProcess.Common.pdb
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\obj\Debug\net6.0\MISA.PromotionProcess.DL.csproj.AssemblyReference.cache
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\obj\Debug\net6.0\MISA.PromotionProcess.DL.GeneratedMSBuildEditorConfig.editorconfig
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\obj\Debug\net6.0\MISA.PromotionProcess.DL.AssemblyInfoInputs.cache
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\obj\Debug\net6.0\MISA.PromotionProcess.DL.AssemblyInfo.cs
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\obj\Debug\net6.0\MISA.PromotionProcess.DL.csproj.CoreCompileInputs.cache
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\obj\Debug\net6.0\MISA.PromotionProcess.DL.csproj.CopyComplete
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\obj\Debug\net6.0\MISA.PromotionProcess.DL.dll
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\obj\Debug\net6.0\refint\MISA.PromotionProcess.DL.dll
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\obj\Debug\net6.0\MISA.PromotionProcess.DL.pdb
+F:\MISA\BE\MISA.PromotionProcess.TVL\MISA.PromotionProcess.DL\obj\Debug\net6.0\ref\MISA.PromotionProcess.DL.dll
