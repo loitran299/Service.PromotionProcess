@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2kBsdqc48pG4Et4Cu8obxt4ImltzfOe55A7TJHa/OnRiSBNcBSxlB7x0veCWzEPuEcF8zCTijy+WVopnFmu3IQ==",
+  "dgSpecHash": "KATatdjVgDrtYjIMqiY6bzIltXGMGY/SC/XbvQItISeSEN8T9fvrk4Pv7MptOfgGypNJSz3guhXynvOjq40Dpw==",
   "success": true,
-  "projectFilePath": "D:\\MISA\\GD2\\BE\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj",
+  "projectFilePath": "F:\\MISA\\GD2\\BE\\Service.PromotionProcess\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

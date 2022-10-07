@@ -14,7 +14,7 @@ namespace MISA.PromotionProcess.DL
         /// </summary>
         /// <returns>Tất cả bản ghi của bảng</returns>
         /// CreatedBy: TVLOI (23/08/2022)
-        IEnumerable<dynamic> GetAll();
+        IEnumerable<T> GetAll();
 
         /// <summary>
         /// Lấy ra bản ghi theo ID

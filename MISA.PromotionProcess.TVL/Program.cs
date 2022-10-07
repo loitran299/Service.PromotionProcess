@@ -4,8 +4,14 @@ using MISA.PromontionProcess.BL;
 using MISA.PromontionProcess.BL.JwtToken;
 using MISA.PromontionProcess.BL.ProductBL;
 using MISA.PromontionProcess.BL.UserBL;
+using MISA.PromotionProcess.BL.EmployeeBL;
+using MISA.PromotionProcess.BL.RequestBL;
+using MISA.PromotionProcess.BL.StructureBL;
 using MISA.PromotionProcess.DL;
+using MISA.PromotionProcess.DL.EmployeeDL;
 using MISA.PromotionProcess.DL.ProductDL;
+using MISA.PromotionProcess.DL.RequestDL;
+using MISA.PromotionProcess.DL.StructureDL;
 using MISA.PromotionProcess.DL.UserDL;
 using System.Text;
 
@@ -32,8 +38,17 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUserDL, UserDL>();
 builder.Services.AddScoped<IUserBL, UserBL>();
-builder.Services.AddScoped<IProductDL, EmployeeDL>();
+builder.Services.AddScoped<IProductDL, ProductDL>();
 builder.Services.AddScoped<IProductBL, ProductBL>();
+
+builder.Services.AddScoped<IStructureDL, StructureDL>();
+builder.Services.AddScoped<IStructureBL, StructureBL>();
+
+builder.Services.AddScoped<IRequestDL, RequestDL>();
+builder.Services.AddScoped<IRequestBL, RequestBL>();
+    
+builder.Services.AddScoped<IEmployeeDL, EmployeeDL>();
+builder.Services.AddScoped<IEmployeeBL, EmployeeBL>();
 
 builder.Services.AddScoped(typeof(IBaseDL<>), typeof(BaseDL<>));
 builder.Services.AddScoped(typeof(IBaseBL<>), typeof(BaseBL<>));

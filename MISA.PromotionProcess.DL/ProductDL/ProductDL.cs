@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MISA.PromotionProcess.DL.ProductDL
 {
-    public class EmployeeDL : BaseDL<Product>, IProductDL
+    public class ProductDL : BaseDL<Product>, IProductDL
     {
     }
 }

@@ -244,19 +244,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\acer\\.nuget\\packages\\": {}
+    "C:\\Users\\TKF\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MISA\\GD2\\BE\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj",
+      "projectUniqueName": "F:\\MISA\\GD2\\BE\\Service.PromotionProcess\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj",
       "projectName": "MISA.PromotionProcess.DL",
-      "projectPath": "D:\\MISA\\GD2\\BE\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj",
-      "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-      "outputPath": "D:\\MISA\\GD2\\BE\\MISA.PromotionProcess.DL\\obj\\",
+      "projectPath": "F:\\MISA\\GD2\\BE\\Service.PromotionProcess\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj",
+      "packagesPath": "C:\\Users\\TKF\\.nuget\\packages\\",
+      "outputPath": "F:\\MISA\\GD2\\BE\\Service.PromotionProcess\\MISA.PromotionProcess.DL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TKF\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -270,8 +270,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\MISA\\GD2\\BE\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj": {
-              "projectPath": "D:\\MISA\\GD2\\BE\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj"
+            "F:\\MISA\\GD2\\BE\\Service.PromotionProcess\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj": {
+              "projectPath": "F:\\MISA\\GD2\\BE\\Service.PromotionProcess\\MISA.PromotionProcess.Common\\MISA.PromotionProcess.Common.csproj"
             }
           }
         }
@@ -318,7 +318,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

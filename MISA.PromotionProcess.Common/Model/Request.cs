@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MISA.PromotionProcess.Common.Model
 {
+    [Table("request")]
     public class Request
     {
+        [Key]
         /// <summary>
         /// ID yêu cầu
         /// </summary>
@@ -76,7 +80,7 @@ namespace MISA.PromotionProcess.Common.Model
         /// <summary>
         /// Lý do xin mã
         /// </summary>
-        public string Reason { get; set; }
+        public string? Reason { get; set; }
 
         /// <summary>
         /// Danh mục
@@ -101,7 +105,7 @@ namespace MISA.PromotionProcess.Common.Model
         /// <summary>
         /// Mã cộng tác viên
         /// </summary>
-        public string CollaboratorCode { get; set; }
+        public string? CollaboratorCode { get; set; }
 
         //---------------------------------Customer Infomation --------------------------------------//
         /// <summary>

@@ -14,7 +14,7 @@ namespace MISA.PromontionProcess.BL
         /// </summary>
         /// <returns>Tất cả bản ghi của bảng</returns>
         /// CreatedBy: TVLOI (23/08/2022)
-        IEnumerable<dynamic> GetAll();
+        IEnumerable<T> GetAll();
 
         /// <summary>
         /// Thêm 1 bản ghi

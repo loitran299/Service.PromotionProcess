@@ -43,7 +43,7 @@ namespace MISA.PromontionProcess.BL
             return (T)_BaseDL.GetByID(id);
         }
 
-        public IEnumerable<dynamic> GetAll()
+        public IEnumerable<T> GetAll()
         {
             return _BaseDL.GetAll();
         }

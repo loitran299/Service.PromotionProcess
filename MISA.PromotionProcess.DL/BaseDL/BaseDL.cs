@@ -31,7 +31,7 @@ namespace MISA.PromotionProcess.DL
         /// Lấy tất cả bản ghi
         /// </summary>
         /// <returns>Tất cả bản ghi</returns>
-        public IEnumerable<dynamic> GetAll()
+        public IEnumerable<T> GetAll()
         {
 
             using (var connection = new MySqlConnection(this._conn))
@@ -39,7 +39,7 @@ namespace MISA.PromotionProcess.DL
 
                 string className = typeof(T).Name;
                 var sql = $"SELECT * FROM {className}";
-                var employeees = connection.Query(sql).ToList();
+                var employeees = connection.Query<T>(sql).ToList();
                 return employeees;
             }
         }
