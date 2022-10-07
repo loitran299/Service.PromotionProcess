@@ -1,4 +1,4 @@
-﻿namespace MISA.WEB07.CNTT2.LOI.Enum
+﻿namespace MISA.PromontionProcess.Common
 {
     public enum Gender
     {

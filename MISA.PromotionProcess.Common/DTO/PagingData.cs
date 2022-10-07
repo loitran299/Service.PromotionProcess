@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MISA.WEB07.CNTT2.LOI.Core.DTO
+namespace MISA.PromontionProcess.Common
 {
     /// <summary>
     /// Đối tượng trả về của phân trang

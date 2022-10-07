@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using MISA.PromontionProcess.BL;
 using MISA.PromontionProcess.BL.JwtToken;
+using MISA.PromontionProcess.BL.ProductBL;
 using MISA.PromontionProcess.BL.UserBL;
 using MISA.PromotionProcess.DL;
+using MISA.PromotionProcess.DL.ProductDL;
 using MISA.PromotionProcess.DL.UserDL;
-using MISA.WEB07.CNTT2.LOI.BL;
-using MISA.WEB07.CNTT2.LOI.DL;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +32,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUserDL, UserDL>();
 builder.Services.AddScoped<IUserBL, UserBL>();
+builder.Services.AddScoped<IProductDL, EmployeeDL>();
+builder.Services.AddScoped<IProductBL, ProductBL>();
 
 builder.Services.AddScoped(typeof(IBaseDL<>), typeof(BaseDL<>));
 builder.Services.AddScoped(typeof(IBaseBL<>), typeof(BaseBL<>));

@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using MISA.WEB07.CNTT2.LOI.Api.Helpers;
-using MISA.WEB07.CNTT2.LOI.BL;
+﻿using Microsoft.AspNetCore.Mvc;
+using MISA.PromontionProcess.BL;
 using MySqlConnector;
 
-namespace MISA.WEB07.CNTT2.LOI.Api
+namespace MISA.PromontionProcess.API
 {
     [Route("api/v1/[controller]")]
     [ApiController]

@@ -1,5 +1,5 @@
 ﻿using MISA.PromotionProcess.Common;
-using MISA.WEB07.CNTT2.LOI.DL;
+using MISA.PromotionProcess.Common.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace MISA.PromotionProcess.DL.UserDL
         /// </summary>
         /// <param name="username"></param>
         /// <returns>user</returns>
-        User getByUsername(string username);
+        UserDTO getByUsername(string username);
 
         /// <summary>
         /// Thêm 1 user

@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using MISA.WEB07.CNTT2.LOI.Core.DTO;
-using MISA.WEB07.CNTT2.LOI.Core.Enums;
+using MISA.PromontionProcess.Common;
 using MySqlConnector;
 using System.Diagnostics;
 
-namespace MISA.WEB07.CNTT2.LOI.Api.Helpers
+namespace MISA.PromontionProcess.API
 {
     public class HandleError
     {

@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "eX0Czf2kQIB7bP8MzJry2zwfRKDvkR04+NRbDGCyGfUnZ0QrANkqlszqSNmmyfnS+yBRLG0b8ZfAk5/2SSv2SA==",
+  "dgSpecHash": "X1wRS9IKgPeNIQj35K8AbqnBPprWGYM+5x2691vp6PhObie06GsfrnCLJjH+cjiO9x0pE8aJocxT74vz07rSMw==",
   "success": true,
-  "projectFilePath": "F:\\MISA\\BE\\MISA.PromotionProcess.TVL\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj",
+  "projectFilePath": "D:\\MISA\\GD2\\BE\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\TKF\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\acer\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

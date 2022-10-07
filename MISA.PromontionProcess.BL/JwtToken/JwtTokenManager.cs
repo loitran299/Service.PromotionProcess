@@ -16,19 +16,36 @@ namespace MISA.PromontionProcess.BL.JwtToken
 {
     public class JwtTokenManager : IJwtTokenManager
     {
+        #region Field
+
         private readonly IConfiguration _configuration;
         private readonly IUserBL _userBL;
+        #endregion
+
+        #region Constructer
+
         public JwtTokenManager(IConfiguration configuration, IUserBL userBL)
         {
             _configuration = configuration;
             _userBL = userBL;
         }
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Tạo jwt token
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        /// CreatedBy: TVLoi (09/04/2022)
         public string? Authenticate(UserDTO user)
         {
             var username = user.Username;
             var password = user.Password;
-            var users = _userBL.GetAll();
-            if (!users.Any(x => x.Username.Equals(username) && BCrypt.Net.BCrypt.Verify(user.Password, x.Password)))
+            var userResult = _userBL.getByUsername(username);
+            // check password encode
+            if (userResult == null || !BCrypt.Net.BCrypt.Verify(password, userResult.Password))
             {
                 return null;
             }
@@ -42,8 +59,10 @@ namespace MISA.PromontionProcess.BL.JwtToken
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, username),
-                    new Claim("Role","admin")
+                    new Claim("EmployeeID", userResult.EmployeeID.ToString()),
+                    new Claim("EmployeeName", userResult.EmployeeName),
+                    new Claim("PositionName", userResult.PositionName),
+                    new Claim(ClaimTypes.Role, userResult.Level.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(
@@ -53,5 +72,6 @@ namespace MISA.PromontionProcess.BL.JwtToken
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
+        #endregion
     }
 }

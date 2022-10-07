@@ -1,12 +1,12 @@
 ﻿using MISA.PromontionProcess.BL.JwtToken;
-using MISA.WEB07.CNTT2.LOI.DL;
+using MISA.PromotionProcess.DL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MISA.WEB07.CNTT2.LOI.BL
+namespace MISA.PromontionProcess.BL
 {
     public class BaseBL<T> : IBaseBL<T>
     {

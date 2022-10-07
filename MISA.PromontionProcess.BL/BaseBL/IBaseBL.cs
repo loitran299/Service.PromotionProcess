@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MISA.WEB07.CNTT2.LOI.BL
+namespace MISA.PromontionProcess.BL
 {
     public interface IBaseBL<T>
     {

@@ -1,5 +1,7 @@
-﻿using MISA.PromotionProcess.Common;
-using MISA.WEB07.CNTT2.LOI.DL;
+﻿using Dapper;
+using MISA.PromotionProcess.Common;
+using MISA.PromotionProcess.Common.DTO;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,20 +31,19 @@ namespace MISA.PromotionProcess.DL.UserDL
             throw new NotImplementedException();
         }
 
-        public User getByUsername(string username)
+        public UserDTO getByUsername(string username)
         {
-            throw new NotImplementedException();
+            using (var connection = new MySqlConnection(this._conn))
+            {
+
+                var sql = $"SELECT * FROM view_user_employee WHERE Username = @username";
+                var record = connection.Query<UserDTO>(sql, new { username = username }).FirstOrDefault();
+                return record;
+            }
         }
         #endregion
 
         #region overide
-        protected override void BeforeSaveAsyn(User entity)
-        {
-
-            entity.Password = BCrypt.Net.BCrypt.HashPassword(entity.Password);
-
-            base.BeforeSaveAsyn(entity);
-        }
         #endregion
     }
 }

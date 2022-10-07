@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace MISA.PromotionProcess.Common.Enums
 {
-    public enum Role
+    public enum RoleRequest
     {
-        Manager = 0,
-        Employee = 1,
+        // Người tạo
+        Create = 1,
+
+        // Người gửi
+        Send = 2,
+
+        // Người duyệt
+        Browse = 3
     }
 }

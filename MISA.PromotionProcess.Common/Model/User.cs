@@ -1,16 +1,20 @@
 ﻿using MISA.PromotionProcess.Common.Enum;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MISA.PromotionProcess.Common
 {
+    [Table("user")]
     public class User
     {
-        #region Property
+        #region Properties
 
+        [Key]
         /// <summary>
         /// Tên tài khoản
         /// </summary>
@@ -24,7 +28,7 @@ namespace MISA.PromotionProcess.Common
         /// <summary>
         /// Vai trò
         /// </summary>
-        public Role Role { get; set; }
+        public Guid EmployeeID { get; set; }
         #endregion
     }
 }

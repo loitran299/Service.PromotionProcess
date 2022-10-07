@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MISA.WEB07.CNTT2.LOI.DL
+namespace MISA.PromotionProcess.DL
 {
     public interface IBaseDL<T>
     {
