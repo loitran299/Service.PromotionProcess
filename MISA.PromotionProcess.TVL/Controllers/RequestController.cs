@@ -19,5 +19,28 @@ namespace MISA.PromotionProcess.API.Controllers
         {
             _requestBL = requestBL;
         }
+
+        /// <summary>
+        /// Lấy danh sách nhân viên theo bộ lọc
+        /// </summary>
+        /// <param name="pageSize">Số bản ghi 1 trang</param>
+        /// <param name="pageNumber">Trang số?</param>
+        /// <param name="employeeFilter">Lọc theo mã và tên nhân viên</param>
+        /// <param name="sortBy">Sắp xếp theo</param>
+        /// <returns>Danh sách nhân viên</returns>
+        /// CreatedBy: TVLOI 23/08/2001
+        [HttpGet("Fillter")]
+        public IActionResult Fillter([FromQuery] int? pageSize, [FromQuery] int? pageNumber, [FromQuery] string? employeeFilter, [FromQuery] string? sortBy)
+        {
+            try
+            {
+                return StatusCode(StatusCodes.Status200OK, _requestBL.Filter(pageSize, pageNumber, employeeFilter, sortBy));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, HandleError.GenerateExceptionResult(ex, HttpContext));
+            }
+        }
     }
 }

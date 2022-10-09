@@ -58,7 +58,7 @@ namespace MISA.PromotionProcess.BL.RequestBL
 
             if (requestFilter != null)
             {
-                where = $"EmployeeID = {requestFilter}";
+                where = $"EmployeeID = '{requestFilter}'";
             }
             if (sortBy != null)
             {
