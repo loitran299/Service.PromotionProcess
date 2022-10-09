@@ -26,10 +26,6 @@ namespace MISA.PromotionProcess.DL.UserDL
 
         #region Method
 
-        public string add(User user)
-        {
-            throw new NotImplementedException();
-        }
 
         public UserDTO getByUsername(string username)
         {

@@ -6,11 +6,13 @@ using MISA.PromontionProcess.BL.ProductBL;
 using MISA.PromontionProcess.BL.UserBL;
 using MISA.PromotionProcess.BL.EmployeeBL;
 using MISA.PromotionProcess.BL.RequestBL;
+using MISA.PromotionProcess.BL.RequestMemberBL;
 using MISA.PromotionProcess.BL.StructureBL;
 using MISA.PromotionProcess.DL;
 using MISA.PromotionProcess.DL.EmployeeDL;
 using MISA.PromotionProcess.DL.ProductDL;
 using MISA.PromotionProcess.DL.RequestDL;
+using MISA.PromotionProcess.DL.RequestMemberDL;
 using MISA.PromotionProcess.DL.StructureDL;
 using MISA.PromotionProcess.DL.UserDL;
 using System.Text;
@@ -46,6 +48,9 @@ builder.Services.AddScoped<IStructureBL, StructureBL>();
 
 builder.Services.AddScoped<IRequestDL, RequestDL>();
 builder.Services.AddScoped<IRequestBL, RequestBL>();
+    
+builder.Services.AddScoped<IRequestMemberDL, RequestMemberDL>();
+builder.Services.AddScoped<IRequestMemberBL, RequestMemberBL>();
     
 builder.Services.AddScoped<IEmployeeDL, EmployeeDL>();
 builder.Services.AddScoped<IEmployeeBL, EmployeeBL>();

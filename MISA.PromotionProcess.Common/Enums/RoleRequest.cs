@@ -15,6 +15,9 @@ namespace MISA.PromotionProcess.Common.Enums
         Send = 2,
 
         // Người duyệt
-        Browse = 3
+        Browse = 3,
+
+        //Người đã tham gia
+        Participants = 4,
     }
 }

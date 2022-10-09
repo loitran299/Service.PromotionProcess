@@ -2,6 +2,6 @@
 {
     public static class DBContext
     {
-        public static string? ConnectionStrings;
+        public static string ConnectionStrings;
     }
 }

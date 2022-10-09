@@ -79,6 +79,7 @@ namespace MISA.PromotionProcess.DL
                 var numberOfAffectedRows = connection.Execute(sql, entity, commandType: CommandType.StoredProcedure, transaction: transaction);
 
                 transaction.Commit();
+                AfterSaveAsyn(entity);
                 return numberOfAffectedRows;
             }
         }

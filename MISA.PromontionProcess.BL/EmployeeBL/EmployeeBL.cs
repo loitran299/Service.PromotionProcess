@@ -21,16 +21,6 @@ namespace MISA.PromotionProcess.BL.EmployeeBL
 
         public dynamic getByNextLevel(Level level)
         {
-            //if(level < Level.TeamLeader)
-            //{
-            //    level = Level.TeamLeader;
-            //}else if(level < Level.Manager)
-            //{
-            //    level = Level.Manager;
-            //}else
-            //{
-            //    level = Level.GeneralManager;
-            //}
             List<Employee> employees = (List<Employee>)_employeeDL.GetAll();
             while(level < Level.GeneralManager)
             {

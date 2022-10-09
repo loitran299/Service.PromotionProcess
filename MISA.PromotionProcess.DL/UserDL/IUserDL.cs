@@ -17,11 +17,5 @@ namespace MISA.PromotionProcess.DL.UserDL
         /// <returns>user</returns>
         UserDTO getByUsername(string username);
 
-        /// <summary>
-        /// Thêm 1 user
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns>tên user</returns>
-        string add(User user);
     }
 }
