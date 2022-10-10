@@ -5,6 +5,7 @@ using MISA.PromontionProcess.BL.ProductBL;
 using MISA.PromontionProcess.BL.UserBL;
 using MISA.PromotionProcess.BL.RequestBL;
 using MISA.PromotionProcess.Common;
+using MISA.PromotionProcess.Common.DTO;
 using MISA.PromotionProcess.Common.Model;
 
 namespace MISA.PromotionProcess.API.Controllers
@@ -35,6 +36,20 @@ namespace MISA.PromotionProcess.API.Controllers
             try
             {
                 return StatusCode(StatusCodes.Status200OK, _requestBL.Filter(pageSize, pageNumber, employeeFilter, sortBy));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, HandleError.GenerateExceptionResult(ex, HttpContext));
+            }
+        }
+
+        [HttpPut("SendRequest")]
+        public IActionResult SendRequest([FromBody]RequestDTO request)
+        {
+            try
+            {
+                return StatusCode(StatusCodes.Status200OK, _requestBL.SendRequest(request));
             }
             catch (Exception ex)
             {

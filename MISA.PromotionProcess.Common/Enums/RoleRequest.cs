@@ -19,5 +19,8 @@ namespace MISA.PromotionProcess.Common.Enums
 
         //Người đã tham gia
         Participants = 4,
+
+        // từ chối
+        Refuse = 5,
     }
 }

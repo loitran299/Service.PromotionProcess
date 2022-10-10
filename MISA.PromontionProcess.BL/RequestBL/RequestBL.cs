@@ -1,4 +1,5 @@
-﻿using MISA.PromontionProcess.BL;
+﻿using AutoMapper;
+using MISA.PromontionProcess.BL;
 using MISA.PromontionProcess.Common;
 using MISA.PromotionProcess.BL.RequestMemberBL;
 using MISA.PromotionProcess.Common.DTO;
@@ -64,8 +65,8 @@ namespace MISA.PromotionProcess.BL.RequestBL
             {
                 sort = sortBy;
             }
-            (IEnumerable<RequestDTO>? employees, pagingData.TotalRecords) = _requesDL.Filter(offSet, limit, sort, where);
-            pagingData.CurrentPageRecords = employees.Count();
+            (IEnumerable<RequestDTO>? requests, pagingData.TotalRecords) = _requesDL.Filter(offSet, limit, sort, where);
+            pagingData.CurrentPageRecords = requests.Count();
 
             if (pageSize != null)
             {
@@ -76,7 +77,7 @@ namespace MISA.PromotionProcess.BL.RequestBL
                 pagingData.TotalPages = 1;
             }
 
-            pagingData.Data = (List<RequestDTO>)employees;
+            pagingData.Data = (List<RequestDTO>)requests;
             return pagingData;
         }
 
@@ -89,12 +90,53 @@ namespace MISA.PromotionProcess.BL.RequestBL
         {
             return _requesDL.getByManager(employeeId);
         }
+
+        /// <summary>
+        /// Gửi yêu cầu
+        /// </summary>
+        /// <param name="requestDTO"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public int SendRequest(RequestDTO requestDTO)
+        {
+            // request
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<RequestDTO, Request>();
+            });
+            IMapper iMapper = config.CreateMapper();
+            Request request = iMapper.Map<Request>(requestDTO);
+
+            request.Status = (int?)RequestStatus.NotApproved;
+            request.RequestDate = DateTime.Now;
+
+            // request member
+            var conf = new MapperConfiguration(cfg => {
+                cfg.CreateMap<RequestDTO, RequestMember>();
+            });
+            IMapper iMap = conf.CreateMapper();
+            RequestMember requestMember = iMap.Map<RequestMember>(requestDTO);
+            requestMember.FinishDate = DateTime.Now;
+            requestMember.Role = RoleRequest.Send;
+
+            // new member
+            RequestMember newMember = new RequestMember();
+            newMember.RequestMemberID = Guid.NewGuid();
+            newMember.RequestID = requestDTO.RequestID;
+            newMember.EmployeeID = (Guid)requestDTO.EmployeeIDCreatedUserChoose;
+            newMember.Role = RoleRequest.Browse;
+
+            var result = _requesDL.Update(request.RequestID ,request);
+            result = _requesMemberBL.Update(requestMember.RequestMemberID ,requestMember);
+            result = _requesMemberBL.Add(newMember);
+            return result;
+        }
         #endregion
 
         #region Override
         protected override void BeforeSaveAsyn(Request entity)
         {
             entity.RequestID = Guid.NewGuid();
+            entity.CreatedDate = DateTime.Now;
             base.BeforeSaveAsyn(entity);
         }
         #endregion

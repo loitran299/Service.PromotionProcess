@@ -133,3 +133,4 @@ F:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.TVL\obj\Debug\net6
 F:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.TVL\obj\Debug\net6.0\MISA.PromotionProcess.API.pdb
 F:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.TVL\obj\Debug\net6.0\MISA.PromotionProcess.API.genruntimeconfig.cache
 F:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.TVL\obj\Debug\net6.0\ref\MISA.PromotionProcess.API.dll
+F:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.TVL\bin\Debug\net6.0\AutoMapper.dll

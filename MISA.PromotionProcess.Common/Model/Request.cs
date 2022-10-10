@@ -107,6 +107,21 @@ namespace MISA.PromotionProcess.Common.Model
         /// </summary>
         public string? CollaboratorCode { get; set; }
 
+        /// <summary>
+        /// Số % giảm
+        /// </summary>
+        public int? PercentageReduction { get; set; }
+
+        /// <summary>
+        /// Số tiền giảm
+        /// </summary>
+        public int? ReductionAmount { get; set; }
+
+        /// <summary>
+        /// Mã khuyến mại
+        /// </summary>
+        public string? VoucherCode { get; set; }
+
         //---------------------------------Customer Infomation --------------------------------------//
         /// <summary>
         /// Số CMT

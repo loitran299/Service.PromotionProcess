@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "r5Y3ynIwqYtkO3QWTgfXFWxAyFIi2jZw9Gx5iH6i48vRg7Nz7cuQFWJ03npgQTnjn6mwQAJXEsQBwTN/Susyzg==",
+  "dgSpecHash": "EjPfP1TOJwrOPhvJMrMco0sDIBvgF4B9omi+Di5POtZfVIiK5eqd31oIlEcvam6o20PSdKRuOM5ngTeAW/C8vg==",
   "success": true,
   "projectFilePath": "F:\\MISA\\GD2\\BE\\Service.PromotionProcess\\MISA.PromontionProcess.BL\\MISA.PromontionProcess.BL.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\TKF\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\TKF\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\TKF\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\TKF\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\TKF\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
     "C:\\Users\\TKF\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\TKF\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",

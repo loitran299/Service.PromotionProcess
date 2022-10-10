@@ -37,5 +37,12 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// <returns>Danh sách nhân viên</returns>
         /// Created by: TVLOI (19/08/2022)
         PagingData<RequestDTO> Filter(int? pageSize, int? pageNumber, string? requestFilter, string? SortBy);
+
+        /// <summary>
+        /// Gửi yêu cầu
+        /// </summary>
+        /// <param name="requestDTO"></param>
+        /// <returns></returns>
+        int SendRequest(RequestDTO requestDTO);
     }
 }

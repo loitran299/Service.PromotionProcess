@@ -56,6 +56,11 @@ namespace MISA.PromotionProcess.Common.DTO
         public Guid? ProductID { get; set; }
 
         /// <summary>
+        /// Tên sản phẩm
+        /// </summary>
+        public string ProductName { get; set; }
+
+        /// <summary>
         /// Ngày bắt đầu có hiệu lực
         /// </summary>
         public DateTime? StartDate { get; set; }
@@ -119,6 +124,21 @@ namespace MISA.PromotionProcess.Common.DTO
         /// Mã cộng tác viên
         /// </summary>
         public string? CollaboratorCode { get; set; }
+
+        /// <summary>
+        /// Số % giảm
+        /// </summary>
+        public int? PercentageReduction { get; set; }
+        
+        /// <summary>
+        /// Số tiền giảm
+        /// </summary>
+        public int? ReductionAmount { get; set; }
+
+        /// <summary>
+        /// Mã khuyến mại
+        /// </summary>
+        public string? VoucherCode { get; set; }
 
         //---------------------------------Customer Infomation --------------------------------------//
         /// <summary>
