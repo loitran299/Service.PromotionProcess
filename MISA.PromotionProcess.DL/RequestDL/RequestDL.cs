@@ -60,7 +60,7 @@ namespace MISA.PromotionProcess.DL.RequestDL
         /// <param name="Where">Điều kiện lọc</param>
         /// <returns>Danh sách nhân viên, số bản ghi</returns>
         /// Created by: TVLOI (19/08/2022)
-        public Tuple<IEnumerable<Common.DTO.RequestDTO>, int> Filter(int Offset, int Limit, string Sort, string Where)
+        public Tuple<List<RequestDTO>, int> Filter(int Offset, int Limit, string Sort, string Where)
         {
             using (var connection = new MySqlConnection(this._conn))
             {
@@ -69,7 +69,7 @@ namespace MISA.PromotionProcess.DL.RequestDL
                 var results = connection.QueryMultiple(sql, parameter, commandType: CommandType.StoredProcedure);
                 var requests = results.Read<RequestDTO>().ToList();
                 var totalRecords = results.Read<int>().First();
-                var tuple = new Tuple<IEnumerable<Common.DTO.RequestDTO>, int>((IEnumerable<Common.DTO.RequestDTO>)requests, totalRecords);
+                var tuple = new Tuple<List<RequestDTO>, int>((List<RequestDTO>)requests, totalRecords);
                 return tuple;
             }
         }

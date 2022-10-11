@@ -43,7 +43,7 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// <param name="requestFilter">Điều kiện lọc</param>
         /// <returns>Danh sách nhân viên</returns>
         /// Created by: TVLOI (19/08/2022)
-        public PagingData<RequestDTO> Filter(int? pageSize, int? pageNumber, string? requestFilter, string? sortBy)
+        public PagingData<RequestDTO> Filter(int? pageSize, int? pageNumber, string? sortBy, RequestFilter requestFilter)
         {
             int offSet = 0;
             int limit = -1;
@@ -59,13 +59,13 @@ namespace MISA.PromotionProcess.BL.RequestBL
 
             if (requestFilter != null)
             {
-                where = $"EmployeeID = '{requestFilter}'";
+                where = $"EmployeeID = '{requestFilter.EmployeeID}'";
             }
             if (sortBy != null)
             {
                 sort = sortBy;
             }
-            (IEnumerable<RequestDTO>? requests, pagingData.TotalRecords) = _requesDL.Filter(offSet, limit, sort, where);
+            (List<RequestDTO>? requests, pagingData.TotalRecords) = _requesDL.Filter(offSet, limit, sort, where);
             pagingData.CurrentPageRecords = requests.Count();
 
             if (pageSize != null)
@@ -75,9 +75,20 @@ namespace MISA.PromotionProcess.BL.RequestBL
             else
             {
                 pagingData.TotalPages = 1;
+            }   
+            List<RequestDTO> result = requests;
+            if(requestFilter.Status != RequestStatus.All)
+            {
+                result = requests.Where(request => request.Status == requestFilter.Status).ToList();
             }
 
-            pagingData.Data = (List<RequestDTO>)requests;
+            if(requestFilter.RequestType != null)
+            {
+
+                result = result.Where(request => request.Status == RequestStatus.NotApproved).ToList();
+            }
+            result = result.Where(request => (request.CreatedDate > requestFilter.StartDate) && (request.CreatedDate < requestFilter.EndDate)).ToList();
+            pagingData.Data = result;
             return pagingData;
         }
 

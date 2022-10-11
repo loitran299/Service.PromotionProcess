@@ -8,19 +8,21 @@ namespace MISA.PromotionProcess.Common.Enums
 {
     public enum RequestStatus
     {
+        All = 1,
+
         // Bản nháp
-        Draft = 1,
+        Draft = 2,
 
         // chưa duyệt
-        NotApproved = 2,
+        NotApproved = 3,
 
         //đã duyệt
-        Approved = 3,
+        Approved = 4,
 
         //đã từ chối
-        Refused = 4,
+        Refused = 5,
 
         //Đã gửi cho KH
-        Sended = 5,
+        Sended = 6,
     }
 }

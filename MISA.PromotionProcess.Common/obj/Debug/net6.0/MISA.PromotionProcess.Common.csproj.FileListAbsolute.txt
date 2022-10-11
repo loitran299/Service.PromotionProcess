@@ -34,3 +34,15 @@ F:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\n
 F:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\refint\MISA.PromotionProcess.Common.dll
 F:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\MISA.PromotionProcess.Common.pdb
 F:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\ref\MISA.PromotionProcess.Common.dll
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\bin\Debug\net6.0\MISA.PromotionProcess.Common.deps.json
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\bin\Debug\net6.0\MISA.PromotionProcess.Common.dll
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\bin\Debug\net6.0\MISA.PromotionProcess.Common.pdb
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\MISA.PromotionProcess.Common.csproj.AssemblyReference.cache
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\MISA.PromotionProcess.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\MISA.PromotionProcess.Common.AssemblyInfoInputs.cache
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\MISA.PromotionProcess.Common.AssemblyInfo.cs
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\MISA.PromotionProcess.Common.csproj.CoreCompileInputs.cache
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\MISA.PromotionProcess.Common.dll
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\refint\MISA.PromotionProcess.Common.dll
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\MISA.PromotionProcess.Common.pdb
+D:\MISA\GD2\BE\Service.PromotionProcess\MISA.PromotionProcess.Common\obj\Debug\net6.0\ref\MISA.PromotionProcess.Common.dll

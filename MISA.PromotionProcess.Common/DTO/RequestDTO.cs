@@ -83,7 +83,7 @@ namespace MISA.PromotionProcess.Common.DTO
         /// <summary>
         /// Trạng thái của yêu cầu
         /// </summary>
-        public int? Status { get; set; }
+        public RequestStatus? Status { get; set; }
 
         /// <summary>
         /// Loại giảm giá

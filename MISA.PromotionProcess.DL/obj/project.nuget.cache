@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "fao5XpsSppwe/bPBf/1RkbtieKOLGZodQky506aEOSf/hKoUFIH/SSEPa0TVgrEfSrnv/a7uiuBGh3KO1LCHDg==",
+  "dgSpecHash": "3uHxcw2xaWh3jG6XeUmZjw8AFjRAUB0qFb78+itiBrMRe8nxtHKinN7JBBofTcSkSRFrIZnLYGWUhXVfR5tpOw==",
   "success": true,
-  "projectFilePath": "F:\\MISA\\GD2\\BE\\Service.PromotionProcess\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj",
+  "projectFilePath": "D:\\MISA\\GD2\\BE\\Service.PromotionProcess\\MISA.PromotionProcess.DL\\MISA.PromotionProcess.DL.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\TKF\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512",
-    "C:\\Users\\TKF\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\acer\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

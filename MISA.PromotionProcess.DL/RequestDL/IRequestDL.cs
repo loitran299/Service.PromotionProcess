@@ -33,6 +33,6 @@ namespace MISA.PromotionProcess.DL.RequestDL
         /// <param name="Where">Điều kiện lọc</param>
         /// <returns>Danh sách nhân viên, số bản ghi</returns>
         /// Created by: TVLOI (19/08/2022)
-        Tuple<IEnumerable<Common.DTO.RequestDTO>, int> Filter(int Offset, int Limit, string Sort, string Where);
+        Tuple<List<RequestDTO>, int> Filter(int Offset, int Limit, string Sort, string Where);
     }
 }
