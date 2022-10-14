@@ -18,5 +18,9 @@ namespace MISA.PromotionProcess.Common.DTO
         public RequestStatus? Status { get; set; }
 
         public RequestType? RequestType { get; set; }
+
+        public Boolean? IsManager { get; set; }
+
+        public Level? CurrentLevel { get; set; }
     }
 }

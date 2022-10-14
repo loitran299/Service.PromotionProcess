@@ -27,7 +27,7 @@ namespace MISA.PromotionProcess.DL.UserDL
         #region Method
 
 
-        public UserDTO getByUsername(string username)
+        public UserDTO GetByUsername(string username)
         {
             using (var connection = new MySqlConnection(this._conn))
             {

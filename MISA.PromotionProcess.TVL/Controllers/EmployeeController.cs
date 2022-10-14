@@ -21,12 +21,12 @@ namespace MISA.PromotionProcess.API.Controllers
             _employeeBL = employeeBL;
         }
 
-        [HttpGet("NextLevel")]
-        public IActionResult getByNextLevel(Level level)
+        [HttpGet("Browser")]
+        public IActionResult GetBrowser(Level level)
         {
             try
             {
-                return StatusCode(StatusCodes.Status200OK, _employeeBL.getByNextLevel(level));
+                return StatusCode(StatusCodes.Status200OK, _employeeBL.GetBrowser(level));
             }
             catch (Exception ex)
             {

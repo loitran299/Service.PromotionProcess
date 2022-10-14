@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MISA.PromotionProcess.Common.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,7 +36,7 @@ namespace MISA.PromotionProcess.Common.Model
         /// <summary>
         /// Cấp đang duyệt
         /// </summary>
-        public int? CurrentLevel { get; set; }
+        public Level? CurrentLevel { get; set; }
 
         /// <summary>
         /// ID sản phẩm
@@ -65,7 +66,7 @@ namespace MISA.PromotionProcess.Common.Model
         /// <summary>
         /// Trạng thái của yêu cầu
         /// </summary>
-        public int? Status { get; set; }
+        public RequestStatus? Status { get; set; }
 
         /// <summary>
         /// Loại giảm giá

@@ -37,5 +37,8 @@ namespace MISA.PromotionProcess.Common.Model
         /// Ngày kết thúc vai trò
         /// </summary>
         public DateTime FinishDate { get; set; }
+
+
+        public Boolean? Active { get; set; } = true;
     }
 }

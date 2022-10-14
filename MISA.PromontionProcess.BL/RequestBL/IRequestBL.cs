@@ -18,14 +18,14 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// </summary>
         /// <param name="employeeId"></param>
         /// <returns></returns>
-        List<Request> getByEmployee(string employeeId);
+        List<Request> GetByEmployee(string employeeId);
 
         /// <summary>
         /// Lấy request cho quản lý bằng id
         /// </summary>
         /// <param name="employeeId"></param>
         /// <returns></returns>
-        List<Request> getByManager(string employeeId);
+        List<Request> GetByManager(string employeeId);
 
         /// <summary>
         /// API Lấy Nhân viên theo bộ lọc

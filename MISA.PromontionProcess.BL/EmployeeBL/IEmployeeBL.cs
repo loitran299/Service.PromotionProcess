@@ -16,6 +16,6 @@ namespace MISA.PromotionProcess.BL.EmployeeBL
         /// </summary>
         /// <param name="level"></param>
         /// <returns></returns>
-        dynamic getByNextLevel(Level level);
+        dynamic GetBrowser(Level level);
     }
 }

@@ -19,18 +19,15 @@ namespace MISA.PromotionProcess.BL.EmployeeBL
             _employeeDL = employeeDL;
         }
 
-        public dynamic getByNextLevel(Level level)
+        /// <summary>
+        /// Lấy ra danh sách nhân viên có thể duyệt yêu cầu
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        public dynamic GetBrowser(Level level)
         {
-            List<Employee> employees = (List<Employee>)_employeeDL.GetAll();
-            while(level < Level.GeneralManager)
-            {
-                if(employees.Any(x => x.Level == level))
-                {
-                    break;
-                }
-                level += 5;
-            }
-            return employees.FindAll(x => x.Level == level);
+            List<Employee> employees = (List<Employee>)_employeeDL.GetBrowser(level);
+            return employees;
         }
     }
 }

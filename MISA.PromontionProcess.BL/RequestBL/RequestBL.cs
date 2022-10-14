@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MISA.PromontionProcess.BL;
 using MISA.PromontionProcess.Common;
+using MISA.PromotionProcess.BL.EmployeeBL;
 using MISA.PromotionProcess.BL.RequestMemberBL;
 using MISA.PromotionProcess.Common.DTO;
 using MISA.PromotionProcess.Common.Enum;
@@ -22,14 +23,16 @@ namespace MISA.PromotionProcess.BL.RequestBL
 
         private readonly IRequestDL _requesDL;
         private readonly IRequestMemberBL _requesMemberBL;
+        private readonly IEmployeeBL _employeeBL;
         #endregion
 
         #region Constructor
 
-        public RequestBL(IRequestDL requesDL, IRequestMemberBL requesMemberBL) : base(requesDL)
+        public RequestBL(IRequestDL requesDL, IRequestMemberBL requesMemberBL, IEmployeeBL employeeBL) : base(requesDL)
         {
             _requesDL = requesDL;
             _requesMemberBL = requesMemberBL;
+            _employeeBL = employeeBL;
         }
         #endregion
 
@@ -57,15 +60,11 @@ namespace MISA.PromotionProcess.BL.RequestBL
                 limit = (int)pageSize;
             }
 
-            if (requestFilter != null)
-            {
-                where = $"EmployeeID = '{requestFilter.EmployeeID}'";
-            }
             if (sortBy != null)
             {
                 sort = sortBy;
             }
-            (List<RequestDTO>? requests, pagingData.TotalRecords) = _requesDL.Filter(offSet, limit, sort, where);
+            (List<RequestDTO>? requests, pagingData.TotalRecords) = _requesDL.Filter(offSet, limit, sort, requestFilter);
             pagingData.CurrentPageRecords = requests.Count();
 
             if (pageSize != null)
@@ -76,30 +75,18 @@ namespace MISA.PromotionProcess.BL.RequestBL
             {
                 pagingData.TotalPages = 1;
             }   
-            List<RequestDTO> result = requests;
-            if(requestFilter.Status != RequestStatus.All)
-            {
-                result = requests.Where(request => request.Status == requestFilter.Status).ToList();
-            }
-
-            if(requestFilter.RequestType != null)
-            {
-
-                result = result.Where(request => request.Status == RequestStatus.NotApproved).ToList();
-            }
-            result = result.Where(request => (request.CreatedDate > requestFilter.StartDate) && (request.CreatedDate < requestFilter.EndDate)).ToList();
-            pagingData.Data = result;
+            pagingData.Data = requests;
             return pagingData;
         }
 
-        public List<Request> getByEmployee(string employeeId)
+        public List<Request> GetByEmployee(string employeeId)
         {
-            return _requesDL.getByEmployee(employeeId);
+            return _requesDL.GetByEmployee(employeeId);
         }
 
-        public List<Request> getByManager(string employeeId)
+        public List<Request> GetByManager(string employeeId)
         {
-            return _requesDL.getByManager(employeeId);
+            return _requesDL.GetByManager(employeeId);
         }
 
         /// <summary>
@@ -117,8 +104,10 @@ namespace MISA.PromotionProcess.BL.RequestBL
             IMapper iMapper = config.CreateMapper();
             Request request = iMapper.Map<Request>(requestDTO);
 
-            request.Status = (int?)RequestStatus.NotApproved;
+            request.Status = RequestStatus.NotApproved;
             request.RequestDate = DateTime.Now;
+            Employee browser = _employeeBL.GetByID((Guid)requestDTO.EmployeeIDCreatedUserChoose);
+            request.CurrentLevel = browser.Level;
 
             // request member
             var conf = new MapperConfiguration(cfg => {
@@ -141,6 +130,8 @@ namespace MISA.PromotionProcess.BL.RequestBL
             result = _requesMemberBL.Add(newMember);
             return result;
         }
+
+        //public int revokeRequest()
         #endregion
 
         #region Override
@@ -148,7 +139,18 @@ namespace MISA.PromotionProcess.BL.RequestBL
         {
             entity.RequestID = Guid.NewGuid();
             entity.CreatedDate = DateTime.Now;
+            entity.CurrentLevel = Level.Employee;
+            entity.RequestDate = DateTime.Now;
             base.BeforeSaveAsyn(entity);
+        }
+        protected override int BeforeUpdate(Request entity)
+        {
+            if (entity.Status != RequestStatus.Draft)
+            {
+                return 0;
+            }
+            return 1;
+            base.BeforeUpdate(entity);
         }
         #endregion
     }

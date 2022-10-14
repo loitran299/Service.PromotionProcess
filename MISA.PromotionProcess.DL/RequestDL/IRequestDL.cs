@@ -15,14 +15,14 @@ namespace MISA.PromotionProcess.DL.RequestDL
         /// </summary>
         /// <param name="employeeId"></param>
         /// <returns></returns>
-        List<Request> getByEmployee(string employeeId);
+        List<Request> GetByEmployee(string employeeId);
 
         /// <summary>
         /// Lấy request cho quản lý bằng id
         /// </summary>
         /// <param name="employeeId"></param>
         /// <returns></returns>
-        List<Request> getByManager(string employeeId);
+        List<Request> GetByManager(string employeeId);
 
         /// <summary>
         /// API Lấy Nhân viên theo bộ lọc
@@ -33,6 +33,6 @@ namespace MISA.PromotionProcess.DL.RequestDL
         /// <param name="Where">Điều kiện lọc</param>
         /// <returns>Danh sách nhân viên, số bản ghi</returns>
         /// Created by: TVLOI (19/08/2022)
-        Tuple<List<RequestDTO>, int> Filter(int Offset, int Limit, string Sort, string Where);
+        Tuple<List<RequestDTO>, int> Filter(int Offset, int Limit, string Sort, RequestFilter requestFilter);
     }
 }

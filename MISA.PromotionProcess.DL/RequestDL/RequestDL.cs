@@ -30,7 +30,7 @@ namespace MISA.PromotionProcess.DL.RequestDL
         #endregion
         #region Methods
 
-        public List<Request> getByEmployee(string employeeId)
+        public List<Request> GetByEmployee(string employeeId)
         {
             using (var connection = new MySqlConnection(this._conn))
             {
@@ -41,7 +41,7 @@ namespace MISA.PromotionProcess.DL.RequestDL
             }
         }
 
-        public List<Request> getByManager(string employeeId)
+        public List<Request> GetByManager(string employeeId)
         {
             using (var connection = new MySqlConnection(this._conn))
             {
@@ -60,12 +60,23 @@ namespace MISA.PromotionProcess.DL.RequestDL
         /// <param name="Where">Điều kiện lọc</param>
         /// <returns>Danh sách nhân viên, số bản ghi</returns>
         /// Created by: TVLOI (19/08/2022)
-        public Tuple<List<RequestDTO>, int> Filter(int Offset, int Limit, string Sort, string Where)
+        public Tuple<List<RequestDTO>, int> Filter(int Offset, int Limit, string Sort, RequestFilter requestFilter)
         {
             using (var connection = new MySqlConnection(this._conn))
             {
-                var sql = @"Proc_Request_GetPaging";
-                var parameter = new { v_Offset = Offset, v_Limit = Limit, v_Sort = Sort, v_Where = Where , v_Table = "view_requestmember_request"};
+                var sql = @"Proc_Request_GetPaging_V2";
+                var parameter = new { 
+                    @Offset = Offset,
+                    @Limit = Limit,
+                    @Sort = Sort,
+                    @EmployeeID = requestFilter.EmployeeID,
+                    @FromDate = requestFilter.StartDate,
+                    @ToDate = requestFilter.EndDate,
+                    @RequestStatus = requestFilter.Status,
+                    @IsLoadForManagement = requestFilter.IsManager,
+                    @ProcessType = requestFilter.RequestType,
+                    @CurrentLevel = requestFilter.CurrentLevel
+                };
                 var results = connection.QueryMultiple(sql, parameter, commandType: CommandType.StoredProcedure);
                 var requests = results.Read<RequestDTO>().ToList();
                 var totalRecords = results.Read<int>().First();
@@ -77,12 +88,15 @@ namespace MISA.PromotionProcess.DL.RequestDL
         #region Override
         protected override void AfterSaveAsyn(Request entity)
         {
-            RequestMember requestMember = new RequestMember();
-            requestMember.EmployeeID = entity.CreatedEmployeeID;
-            requestMember.RequestID = entity.RequestID;
-            requestMember.RequestMemberID = Guid.NewGuid();
-            requestMember.Role = RoleRequest.Create;
-            requestMember.FinishDate = DateTime.Now;
+            RequestMember requestMember = new RequestMember
+            {
+                EmployeeID = entity.CreatedEmployeeID,
+                RequestID = entity.RequestID,
+                RequestMemberID = Guid.NewGuid(),
+                Role = RoleRequest.Create,
+                FinishDate = DateTime.Now,
+                Active = true
+            };
             _requesMemberDL.Add(requestMember);
             base.AfterSaveAsyn(entity);
         }

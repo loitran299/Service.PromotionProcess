@@ -51,6 +51,11 @@ namespace MISA.PromontionProcess.BL
         public int Update(Guid id, T entity)
         {
             BeforeSaveAndUpdate(entity);
+            var result = BeforeUpdate(entity);
+            if(result == 0)
+            {
+                return 0;
+            }
             return _BaseDL.Update(id, entity);
         }
         #endregion
@@ -73,6 +78,15 @@ namespace MISA.PromontionProcess.BL
         protected virtual void BeforeSaveAndUpdate(T entity)
         {
 
+        }
+        /// <summary>
+        /// Hàm xử lý trước khi save và update nhân viên
+        /// </summary>
+        /// <param name="entity"></param>
+        /// Created by: TVLOI (19/08/2022)
+        protected virtual int BeforeUpdate(T entity)
+        {
+            return 0;
         }
         #endregion
     }

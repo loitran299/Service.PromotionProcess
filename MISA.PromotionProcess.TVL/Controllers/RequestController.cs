@@ -10,7 +10,7 @@ using MISA.PromotionProcess.Common.Model;
 
 namespace MISA.PromotionProcess.API.Controllers
 {
-    [Authorize]
+    [Authorize] 
     [Route("api/v1/[controller]")]
     [ApiController]
     public class RequestController : BaseController<Request>

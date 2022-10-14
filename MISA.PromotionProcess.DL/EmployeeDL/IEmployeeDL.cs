@@ -15,6 +15,6 @@ namespace MISA.PromotionProcess.DL.EmployeeDL
         /// </summary>
         /// <param name="level"></param>
         /// <returns></returns>
-        dynamic getByLevel(Level level);
+        dynamic GetBrowser(Level level);
     }
 }

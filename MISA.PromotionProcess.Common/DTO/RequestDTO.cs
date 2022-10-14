@@ -140,6 +140,8 @@ namespace MISA.PromotionProcess.Common.DTO
         /// </summary>
         public string? VoucherCode { get; set; }
 
+        public Boolean? Active { get; set; }
+
         //---------------------------------Customer Infomation --------------------------------------//
         /// <summary>
         /// Số CMT

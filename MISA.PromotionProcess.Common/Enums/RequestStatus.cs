@@ -8,6 +8,8 @@ namespace MISA.PromotionProcess.Common.Enums
 {
     public enum RequestStatus
     {
+        Deleted = 0,
+
         All = 1,
 
         // Bản nháp

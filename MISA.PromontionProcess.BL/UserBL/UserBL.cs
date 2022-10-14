@@ -48,7 +48,7 @@ namespace MISA.PromontionProcess.BL.UserBL
         ///  CreatedBy: TVLoi (09/04/2022)
         public UserDTO getByUsername(string username)
         {
-            return _userDL.getByUsername(username);
+            return _userDL.GetByUsername(username);
         }
         #endregion
 

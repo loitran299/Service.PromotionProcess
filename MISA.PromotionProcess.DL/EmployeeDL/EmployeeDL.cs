@@ -4,6 +4,7 @@ using MISA.PromotionProcess.Common.Model;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,13 +24,18 @@ namespace MISA.PromotionProcess.DL.EmployeeDL
             _conn = DBContext.ConnectionStrings;
         }
         #endregion
-        public dynamic getByLevel(Level level)
+        public dynamic GetBrowser(Level level)
         {
             using (var connection = new MySqlConnection(this._conn))
             {
-                var sql = $"SELECT * FROM employee WHERE Level = @level";
-                var record = connection.Query<Employee>(sql, new { level = level }).FirstOrDefault();
-                return record;
+                var sql = @"Proc_Employee_Browser";
+                var parameter = new
+                {
+                    @Level = level
+                };
+                var results = connection.QueryMultiple(sql, parameter, commandType: CommandType.StoredProcedure);
+                var requests = results.Read<Employee>().ToList();
+                return requests;
             }
         }
     }
