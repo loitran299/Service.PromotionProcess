@@ -17,5 +17,15 @@ namespace MISA.PromotionProcess.BL.RequestMemberBL
         {
             _requestMemberDL = requestMemberDL;
         }
+
+        public int InActive(Guid requestID, Guid employeeID)
+        {
+            return _requestMemberDL.inActive(requestID, employeeID);
+        }
+
+        public int InActiveByRequestID(Guid requestID)
+        {
+            return _requestMemberDL.inActiveByRequestID(requestID);
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace MISA.PromotionProcess.Common.DTO
         /// <summary>
         /// Cấp đang duyệt
         /// </summary>
-        public int? CurrentLevel { get; set; }
+        public Level? CurrentLevel { get; set; }
 
         /// <summary>
         /// ID sản phẩm

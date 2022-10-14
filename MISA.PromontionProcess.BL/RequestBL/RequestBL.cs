@@ -4,7 +4,6 @@ using MISA.PromontionProcess.Common;
 using MISA.PromotionProcess.BL.EmployeeBL;
 using MISA.PromotionProcess.BL.RequestMemberBL;
 using MISA.PromotionProcess.Common.DTO;
-using MISA.PromotionProcess.Common.Enum;
 using MISA.PromotionProcess.Common.Enums;
 using MISA.PromotionProcess.Common.Model;
 using MISA.PromotionProcess.DL;
@@ -95,43 +94,99 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// <param name="requestDTO"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public int SendRequest(RequestDTO requestDTO)
+        public int SendRequest(Guid[] requests)
         {
             // request
             var config = new MapperConfiguration(cfg => {
                 cfg.CreateMap<RequestDTO, Request>();
             });
             IMapper iMapper = config.CreateMapper();
-            Request request = iMapper.Map<Request>(requestDTO);
 
-            request.Status = RequestStatus.NotApproved;
-            request.RequestDate = DateTime.Now;
-            Employee browser = _employeeBL.GetByID((Guid)requestDTO.EmployeeIDCreatedUserChoose);
-            request.CurrentLevel = browser.Level;
-
-            // request member
             var conf = new MapperConfiguration(cfg => {
                 cfg.CreateMap<RequestDTO, RequestMember>();
             });
             IMapper iMap = conf.CreateMapper();
-            RequestMember requestMember = iMap.Map<RequestMember>(requestDTO);
-            requestMember.FinishDate = DateTime.Now;
-            requestMember.Role = RoleRequest.Send;
+            var result = 0;
+            foreach (Guid requestMemberID in requests)
+            {   
+                RequestDTO requestDTO = _requesDL.GetDtoByID(requestMemberID);
 
-            // new member
-            RequestMember newMember = new RequestMember();
-            newMember.RequestMemberID = Guid.NewGuid();
-            newMember.RequestID = requestDTO.RequestID;
-            newMember.EmployeeID = (Guid)requestDTO.EmployeeIDCreatedUserChoose;
-            newMember.Role = RoleRequest.Browse;
+                if (requestDTO.Status == RequestStatus.Draft)
+                {
+                    Request request = iMapper.Map<Request>(requestDTO);
 
-            var result = _requesDL.Update(request.RequestID ,request);
-            result = _requesMemberBL.Update(requestMember.RequestMemberID ,requestMember);
-            result = _requesMemberBL.Add(newMember);
+                    request.Status = RequestStatus.NotApproved;
+                    request.RequestDate = DateTime.Now;
+                    Employee browser = _employeeBL.GetByID((Guid)requestDTO.EmployeeIDCreatedUserChoose);
+                    request.CurrentLevel = browser.Level;
+
+                    // request member
+                    RequestMember requestMember = iMap.Map<RequestMember>(requestDTO);
+                    requestMember.FinishDate = DateTime.Now;
+                    requestMember.Role = RoleRequest.Send;
+
+                    // new member
+                    RequestMember newMember = new RequestMember();
+                    newMember.RequestMemberID = Guid.NewGuid();
+                    newMember.RequestID = requestDTO.RequestID;
+                    newMember.EmployeeID = (Guid)requestDTO.EmployeeIDCreatedUserChoose;
+                    newMember.Role = RoleRequest.Browse;
+
+                    result = _requesDL.Update(request.RequestID, request);
+                    result = _requesMemberBL.Update(requestMember.RequestMemberID, requestMember);
+                    result = _requesMemberBL.Add(newMember);
+                }
+            }
             return result;
         }
 
-        //public int revokeRequest()
+        public int DeleteMultiple(Guid[] requestMemberIDs)
+        {
+            // request
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<RequestDTO, Request>();
+            });
+            IMapper iMapper = config.CreateMapper();
+            int result = 0;
+            foreach (Guid requestMemberID in requestMemberIDs)
+            {
+                RequestDTO requestDTO = _requesDL.GetDtoByID(requestMemberID);
+                if(requestDTO.Status == RequestStatus.Draft)
+                {
+
+                result = _requesMemberBL.InActiveByRequestID(requestDTO.RequestID);
+
+                Request request = iMapper.Map<Request>(requestDTO);
+                request.Status = RequestStatus.Deleted;
+
+                result = _requesDL.Update(request.RequestID, request);
+                }
+            }
+            return result;
+        }
+        public int RevokeRequests(Guid[] requestMemberIDs)
+        {
+            // request
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<RequestDTO, Request>();
+            });
+            IMapper iMapper = config.CreateMapper();
+            int result = 0;
+            foreach (Guid requestMemberID in requestMemberIDs)
+            {
+                RequestDTO requestDTO = _requesDL.GetDtoByID(requestMemberID);
+                if (requestDTO.CurrentLevel < Level.Manager)
+                {
+
+                    Request request = iMapper.Map<Request>(requestDTO);
+                    request.Status = RequestStatus.Draft;
+                    result = _requesDL.Update(request.RequestID, request);
+
+                    result = _requesMemberBL.InActive(requestDTO.RequestID, (Guid)requestDTO.EmployeeIDCreatedUserChoose);
+                }
+            }
+            return result;
+        }
         #endregion
 
         #region Override

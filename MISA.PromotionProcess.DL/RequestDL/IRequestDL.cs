@@ -34,5 +34,12 @@ namespace MISA.PromotionProcess.DL.RequestDL
         /// <returns>Danh sách nhân viên, số bản ghi</returns>
         /// Created by: TVLOI (19/08/2022)
         Tuple<List<RequestDTO>, int> Filter(int Offset, int Limit, string Sort, RequestFilter requestFilter);
+
+        /// <summary>
+        /// Lấy ra RequestDTO by id RequestMember
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        RequestDTO GetDtoByID(Guid id);
     }
 }

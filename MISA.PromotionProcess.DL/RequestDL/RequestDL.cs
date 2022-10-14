@@ -84,6 +84,18 @@ namespace MISA.PromotionProcess.DL.RequestDL
                 return tuple;
             }
         }
+
+        public RequestDTO GetDtoByID(Guid id)
+        {
+            using (var connection = new MySqlConnection(this._conn))
+            {
+                var sql = $"SELECT * FROM view_requestmember_request WHERE RequestMemberID = @id";
+                var record = connection.Query<RequestDTO>(sql, new { id = id }).FirstOrDefault();
+                return record;
+            }
+        }
+
+
         #endregion
         #region Override
         protected override void AfterSaveAsyn(Request entity)

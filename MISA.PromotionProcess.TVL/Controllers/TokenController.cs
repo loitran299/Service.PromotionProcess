@@ -8,7 +8,7 @@ namespace MISA.PromotionProcess.API.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    public class TokenController : Controller
+    public class TokenController : ControllerBase
     {
         private readonly IJwtTokenManager _tokenManager;
 

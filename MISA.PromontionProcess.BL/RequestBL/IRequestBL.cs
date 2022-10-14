@@ -43,6 +43,20 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// </summary>
         /// <param name="requestDTO"></param>
         /// <returns></returns>
-        int SendRequest(RequestDTO requestDTO);
+        int SendRequest(Guid[] requestDTO);
+
+        /// <summary>
+        /// Xóa yêu cầu
+        /// </summary>
+        /// <param name="requests"></param>
+        /// <returns></returns>
+        int DeleteMultiple(Guid[] requests);
+        
+        /// <summary>
+        /// Xóa yêu cầu
+        /// </summary>
+        /// <param name="requests"></param>
+        /// <returns></returns>
+        int RevokeRequests(Guid[] requests);
     }
 }

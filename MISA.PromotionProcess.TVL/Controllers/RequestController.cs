@@ -45,11 +45,39 @@ namespace MISA.PromotionProcess.API.Controllers
         }
 
         [HttpPut("SendRequest")]
-        public IActionResult SendRequest([FromBody]RequestDTO request)
+        public IActionResult SendRequest([FromBody]Guid[] requests)
         {
             try
             {
-                return StatusCode(StatusCodes.Status200OK, _requestBL.SendRequest(request));
+                return StatusCode(StatusCodes.Status200OK, _requestBL.SendRequest(requests));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, HandleError.GenerateExceptionResult(ex, HttpContext));
+            }
+        }
+
+        [HttpPut("Multiple")]
+        public IActionResult DeleteMultiple([FromBody]Guid[] requests)
+        {
+            try
+            {
+                return StatusCode(StatusCodes.Status200OK, _requestBL.DeleteMultiple(requests));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, HandleError.GenerateExceptionResult(ex, HttpContext));
+            }
+        }
+
+        [HttpPut("Revoke")]
+        public IActionResult Revoke([FromBody] Guid[] requests)
+        {
+            try
+            {
+                return StatusCode(StatusCodes.Status200OK, _requestBL.RevokeRequests(requests));
             }
             catch (Exception ex)
             {
