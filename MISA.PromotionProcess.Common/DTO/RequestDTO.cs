@@ -140,7 +140,35 @@ namespace MISA.PromotionProcess.Common.DTO
         /// </summary>
         public string? VoucherCode { get; set; }
 
+        /// <summary>
+        /// Đang hoạt động
+        /// </summary>
         public Boolean? Active { get; set; }
+
+        /// <summary>
+        /// Người tạo
+        /// </summary>
+        public string? CreatedBy { get; set; }
+        
+        /// <summary>
+        /// Người gửi
+        /// </summary>
+        public string? SentBy { get; set; }
+
+        /// <summary>
+        /// Ngày gửi
+        /// </summary>
+        public DateTime? SentDate { get; set; }
+
+        /// <summary>
+        /// Người duyệt
+        /// </summary>
+        public string? ApprovedBy { get; set; }
+
+        /// <summary>
+        /// Ngày duyệt
+        /// </summary>
+        public DateTime? ApprovedDate { get; set; }
 
         //---------------------------------Customer Infomation --------------------------------------//
         /// <summary>
