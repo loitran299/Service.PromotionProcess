@@ -65,5 +65,13 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// <param name="requests"></param>
         /// <returns></returns>
         int ApprovalRequests(Guid[] requests);
+
+
+        /// <summary>
+        /// Gửi yêu cầu lên cấp cao hơn
+        /// </summary>
+        /// <param name="requests"></param>
+        /// <returns></returns>
+        int TransferRequests(Guid[] requests);
     }
 }
