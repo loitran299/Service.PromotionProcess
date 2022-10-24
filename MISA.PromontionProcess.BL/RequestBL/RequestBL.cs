@@ -140,6 +140,11 @@ namespace MISA.PromotionProcess.BL.RequestBL
             return result;
         }
 
+        /// <summary>
+        /// Xóa yêu cầu
+        /// </summary>
+        /// <param name="requests"></param>
+        /// <returns></returns>
         public int DeleteMultiple(Guid[] requestMemberIDs)
         {
             // request
@@ -164,6 +169,12 @@ namespace MISA.PromotionProcess.BL.RequestBL
             }
             return result;
         }
+
+        /// <summary>
+        /// Thu hồi yêu cầu
+        /// </summary>
+        /// <param name="requests"></param>
+        /// <returns></returns>
         public int RevokeRequests(Guid[] requestMemberIDs)
         {
             // request
@@ -187,6 +198,39 @@ namespace MISA.PromotionProcess.BL.RequestBL
             }
             return result;
         }
+
+        /// <summary>
+        /// Duyệt yêu cầu
+        /// </summary>
+        /// <param name="requests"></param>
+        /// <returns></returns>
+        public int ApprovalRequests(Guid[] requests)
+        {
+            int result = 0;
+            foreach(Guid requestID in requests)
+            {
+                Request request = _requesDL.GetByID(requestID);
+                if(request.LevelCreatedUserChoose == request.CurrentLevel)
+                {
+                    request.Status = RequestStatus.Approved;
+                    request.VoucherCode = this.GenerateCode();
+
+                    RequestMember requestMember = _requesMemberBL.getByRequestAndEmployee(request.RequestID, request.EmployeeIDCreatedUserChoose);
+                    requestMember.FinishDate = DateTime.Now;
+                    result = _requesDL.Update(request.RequestID, request);
+                    result = _requesMemberBL.Update(requestMember.RequestMemberID, requestMember);
+
+                }
+            }
+            return result;
+        }
+
+        private string GenerateCode()
+        {
+            string newGuid = Guid.NewGuid().ToString();
+            newGuid = newGuid.Replace("-", "");
+            return newGuid.Substring(0, 8);
+        }
         #endregion
 
         #region Override
@@ -207,6 +251,7 @@ namespace MISA.PromotionProcess.BL.RequestBL
             return 1;
             base.BeforeUpdate(entity);
         }
+
         #endregion
     }
 }

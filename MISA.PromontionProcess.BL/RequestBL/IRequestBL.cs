@@ -53,10 +53,17 @@ namespace MISA.PromotionProcess.BL.RequestBL
         int DeleteMultiple(Guid[] requests);
         
         /// <summary>
-        /// Xóa yêu cầu
+        /// Thu hồi yêu cầu
         /// </summary>
         /// <param name="requests"></param>
         /// <returns></returns>
         int RevokeRequests(Guid[] requests);
+
+        /// <summary>
+        /// Duyệt yêu cầu
+        /// </summary>
+        /// <param name="requests"></param>
+        /// <returns></returns>
+        int ApprovalRequests(Guid[] requests);
     }
 }

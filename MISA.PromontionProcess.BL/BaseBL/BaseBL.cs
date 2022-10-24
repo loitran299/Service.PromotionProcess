@@ -86,7 +86,7 @@ namespace MISA.PromontionProcess.BL
         /// Created by: TVLOI (19/08/2022)
         protected virtual int BeforeUpdate(T entity)
         {
-            return 0;
+            return 1;
         }
         #endregion
     }

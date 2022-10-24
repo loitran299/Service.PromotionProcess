@@ -85,5 +85,20 @@ namespace MISA.PromotionProcess.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, HandleError.GenerateExceptionResult(ex, HttpContext));
             }
         }
+
+
+        [HttpPut("Approval")]
+        public IActionResult Approval([FromBody] Guid[] requests)
+        {
+            try
+            {
+                return StatusCode(StatusCodes.Status200OK, _requestBL.ApprovalRequests(requests));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, HandleError.GenerateExceptionResult(ex, HttpContext));
+            }
+        }
     }
 }

@@ -22,6 +22,23 @@ namespace MISA.PromotionProcess.DL.RequestMemberDL
         {
             _conn = DBContext.ConnectionStrings;
         }
+        #endregion
+
+        public RequestMember getByRequestAndEmployee(Guid requestID, Guid employeeID)
+        {
+            using (var connection = new MySqlConnection(this._conn))
+            {
+                var sql = $"SELECT * FROM requestmember r WHERE r.RequestID = @Request AND r.EmployeeID = @Employee";
+                var parameter = new
+                {
+                    Request = requestID,
+                    Employee = employeeID,
+                };
+                var requestMember = connection.Query<RequestMember>(sql, parameter).FirstOrDefault();
+                return (RequestMember)requestMember;
+            }
+        }
+    
 
         public int inActive(Guid requestID, Guid employeeID)
         {
@@ -40,7 +57,6 @@ namespace MISA.PromotionProcess.DL.RequestMemberDL
                 return numberOfAffectedRows;
             }
         }
-        #endregion
         public int inActiveByRequestID(Guid requestID)
         {
             using var connection = new MySqlConnection(this._conn);

@@ -89,7 +89,7 @@ namespace MISA.PromotionProcess.DL.RequestDL
         {
             using (var connection = new MySqlConnection(this._conn))
             {
-                var sql = $"SELECT * FROM view_requestmember_request WHERE RequestMemberID = @id";
+                var sql = $"SELECT * FROM view_requestmember_request_v2 WHERE RequestMemberID = @id";
                 var record = connection.Query<RequestDTO>(sql, new { id = id }).FirstOrDefault();
                 return record;
             }

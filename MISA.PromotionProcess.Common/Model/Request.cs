@@ -91,12 +91,12 @@ namespace MISA.PromotionProcess.Common.Model
         /// <summary>
         /// Cấp xin duyệt
         /// </summary>
-        public int? LevelCreatedUserChoose { get; set; }
+        public Level? LevelCreatedUserChoose { get; set; }
 
         /// <summary>
         /// Nhân viên xin duyệt
         /// </summary>
-        public Guid? EmployeeIDCreatedUserChoose { get; set; }
+        public Guid EmployeeIDCreatedUserChoose { get; set; }
 
         /// <summary>
         /// Lý do từ chối

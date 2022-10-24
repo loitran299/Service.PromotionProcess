@@ -22,5 +22,12 @@ namespace MISA.PromotionProcess.DL.RequestMemberDL
         /// <param name="requestID"></param>
         /// <returns></returns>
         int inActive(Guid requestID, Guid employeeID);
+        
+        /// <summary>
+        /// Lấy bới mã yêu cầu và mã nhân viên
+        /// </summary>
+        /// <param name="requestID"></param>
+        /// <returns></returns>
+        RequestMember getByRequestAndEmployee(Guid requestID, Guid employeeID);
     }
 }
