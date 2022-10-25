@@ -115,5 +115,19 @@ namespace MISA.PromotionProcess.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, HandleError.GenerateExceptionResult(ex, HttpContext));
             }
         }
+
+        [HttpPut("Refuse")]
+        public IActionResult RefuseRequest([FromBody] Guid[] requests, [FromQuery] string reasonForRefusal)
+        {
+            try
+            {
+                return StatusCode(StatusCodes.Status200OK, _requestBL.RefuseRequests(requests, reasonForRefusal));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, HandleError.GenerateExceptionResult(ex, HttpContext));
+            }
+        }
     }
 }

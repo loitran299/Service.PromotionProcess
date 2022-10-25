@@ -170,6 +170,12 @@ namespace MISA.PromotionProcess.Common.DTO
         /// </summary>
         public DateTime? ApprovedDate { get; set; }
 
+
+        /// <summary>
+        /// Id người duyệt được chọn đầu tiên
+        /// </summary>
+        public Guid? FirstApproverID { get; set; }
+
         //---------------------------------Customer Infomation --------------------------------------//
         /// <summary>
         /// Số CMT

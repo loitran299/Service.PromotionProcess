@@ -119,6 +119,7 @@ namespace MISA.PromotionProcess.BL.RequestBL
                     request.RequestDate = DateTime.Now;
                     Employee browser = _employeeBL.GetByID((Guid)requestDTO.EmployeeIDCreatedUserChoose);
                     request.CurrentLevel = browser.Level;
+                    request.FirstApproverID = requestDTO.EmployeeIDCreatedUserChoose;
 
                     // request member
                     RequestMember requestMember = iMap.Map<RequestMember>(requestDTO);
@@ -259,6 +260,29 @@ namespace MISA.PromotionProcess.BL.RequestBL
         }
 
         /// <summary>
+        /// Từ chối yêu cầu
+        /// </summary>
+        /// <param name="requests"></param>
+        /// <returns></returns>
+        /// Created by: TVLOI (25/10/2022)
+        public int RefuseRequests(Guid[] requests, string reasonForRefusal)
+        {
+            int result = 0;
+            foreach (Guid requestID in requests)
+            {
+                Request request = _requesDL.GetByID(requestID);
+                if (request.LevelCreatedUserChoose == request.CurrentLevel)
+                {
+                    request.Status = RequestStatus.Refused;
+                    request.ReasonForRefusal = reasonForRefusal;
+
+                    result = _requesDL.Update(request.RequestID, request);
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
         /// Tạo Voucher code
         /// </summary>
         /// <returns></returns>
@@ -281,6 +305,14 @@ namespace MISA.PromotionProcess.BL.RequestBL
         }
         protected override int BeforeUpdate(Request entity)
         {
+            if(entity.Status == RequestStatus.Refused)
+            {
+                entity.Status = RequestStatus.Draft;
+                entity.EmployeeIDCreatedUserChoose = (Guid)entity.FirstApproverID;
+                entity.CurrentLevel = Level.TeamLeader;
+                entity.FirstApproverID = null;
+                
+            }
             if (entity.Status != RequestStatus.Draft)
             {
                 return 0;

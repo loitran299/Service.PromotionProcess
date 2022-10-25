@@ -123,6 +123,11 @@ namespace MISA.PromotionProcess.Common.Model
         /// </summary>
         public string? VoucherCode { get; set; }
 
+        /// <summary>
+        /// Id người duyệt được chọn đầu tiên
+        /// </summary>
+        public Guid? FirstApproverID { get; set; }
+
         //---------------------------------Customer Infomation --------------------------------------//
         /// <summary>
         /// Số CMT

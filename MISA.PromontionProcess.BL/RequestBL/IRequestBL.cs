@@ -44,6 +44,7 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// </summary>
         /// <param name="requestDTO"></param>
         /// <returns></returns>
+        /// Created by: TVLOI (19/10/2022)
         int SendRequest(Guid[] requestDTO);
 
         /// <summary>
@@ -51,13 +52,15 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// </summary>
         /// <param name="requests"></param>
         /// <returns></returns>
+        /// Created by: TVLOI (19/10/2022)
         int DeleteMultiple(Guid[] requests);
-        
+
         /// <summary>
         /// Thu hồi yêu cầu
         /// </summary>
         /// <param name="requests"></param>
         /// <returns></returns>
+        /// Created by: TVLOI (20/10/2022)
         int RevokeRequests(Guid[] requests);
 
         /// <summary>
@@ -65,6 +68,7 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// </summary>
         /// <param name="requests"></param>
         /// <returns></returns>
+        /// Created by: TVLOI (24/10/2022)
         int ApprovalRequests(Guid[] requests);
 
 
@@ -73,6 +77,15 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// </summary>
         /// <param name="requests"></param>
         /// <returns></returns>
+        /// Created by: TVLOI (24/10/2022)
         int TransferRequests(Guid[] requests,Guid employeeIdChooser,Level level);
+
+        /// <summary>
+        /// Từ chối yêu cầu
+        /// </summary>
+        /// <param name="requests"></param>
+        /// <returns></returns>
+        /// Created by: TVLOI (25/10/2022)
+        int RefuseRequests(Guid[] requests,string ReasonForRefusal);
     }
 }
