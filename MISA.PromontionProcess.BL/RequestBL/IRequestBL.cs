@@ -1,6 +1,7 @@
 ﻿using MISA.PromontionProcess.BL;
 using MISA.PromontionProcess.Common;
 using MISA.PromotionProcess.Common.DTO;
+using MISA.PromotionProcess.Common.Enums;
 using MISA.PromotionProcess.Common.Model;
 using System;
 using System.Collections.Generic;
@@ -72,6 +73,6 @@ namespace MISA.PromotionProcess.BL.RequestBL
         /// </summary>
         /// <param name="requests"></param>
         /// <returns></returns>
-        int TransferRequests(Guid[] requests);
+        int TransferRequests(Guid[] requests,Guid employeeIdChooser,Level level);
     }
 }

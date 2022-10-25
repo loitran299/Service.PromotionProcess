@@ -32,5 +32,10 @@ namespace MISA.PromotionProcess.BL.RequestMemberBL
         {
             return _requestMemberDL.inActiveByRequestID(requestID);
         }
+
+        public int TransferRequest(Guid requestID)
+        {
+            return _requestMemberDL.TransferRequest(requestID);
+        }
     }
 }

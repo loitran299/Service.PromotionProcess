@@ -31,5 +31,12 @@ namespace MISA.PromotionProcess.BL.RequestMemberBL
         /// <param name="requestID"></param>
         /// <returns></returns>
         RequestMember getByRequestAndEmployee(Guid requestID, Guid employeeID);
+
+        /// <summary>
+        /// Sửa thông tin thành viên khi gửi yêu cầu lên cấp cao hơn
+        /// </summary>
+        /// <param name="requestID"></param>
+        /// <returns></returns>
+        int TransferRequest(Guid requestID);
     }
 }

@@ -73,5 +73,22 @@ namespace MISA.PromotionProcess.DL.RequestMemberDL
                 return numberOfAffectedRows;
             }
         }
+
+        public int TransferRequest(Guid requestID)
+        {
+            using var connection = new MySqlConnection(this._conn);
+            connection.Open();
+            using (var transaction = connection.BeginTransaction())
+            {
+                var sql = $"Proc_RequestMember_Transfer";
+                var parameter = new
+                {
+                    @RequestID = requestID,
+                };
+                var numberOfAffectedRows = connection.Execute(sql, parameter, commandType: CommandType.StoredProcedure, transaction: transaction);
+                transaction.Commit();
+                return numberOfAffectedRows;
+            }
+        }
     }
 }

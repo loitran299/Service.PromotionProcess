@@ -214,6 +214,7 @@ namespace MISA.PromotionProcess.BL.RequestBL
                 {
                     request.Status = RequestStatus.Approved;
                     request.VoucherCode = this.GenerateCode();
+                    request.RequestDate = DateTime.Now;
 
                     RequestMember requestMember = _requesMemberBL.getByRequestAndEmployee(request.RequestID, request.EmployeeIDCreatedUserChoose);
                     requestMember.FinishDate = DateTime.Now;
@@ -225,6 +226,42 @@ namespace MISA.PromotionProcess.BL.RequestBL
             return result;
         }
 
+        /// <summary>
+        /// Gửi yêu cầu lên cấp cao hơn
+        /// </summary>
+        /// <param name="requests"></param>
+        /// <returns></returns>
+        public int TransferRequests(Guid[] requests, Guid employeeIdChooser, Level level)
+        {
+            int result = 0;
+            foreach (Guid requestID in requests)
+            {
+                Request request = _requesDL.GetByID(requestID);
+                if (request.LevelCreatedUserChoose > request.CurrentLevel)
+                {
+                    request.CurrentLevel = level;
+                    request.EmployeeIDCreatedUserChoose = employeeIdChooser;
+                    request.RequestDate = DateTime.Now;
+
+                    RequestMember requestMember = new()
+                    {
+                        RequestMemberID = Guid.NewGuid(),
+                        Role = RoleRequest.Browse,
+                        RequestID = request.RequestID,
+                        EmployeeID = employeeIdChooser
+                    };
+                    result = _requesMemberBL.TransferRequest(request.RequestID);
+                    result = _requesMemberBL.Add(requestMember);
+                    result = _requesDL.Update(request.RequestID, request);
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Tạo Voucher code
+        /// </summary>
+        /// <returns></returns>
         private string GenerateCode()
         {
             string newGuid = Guid.NewGuid().ToString();

@@ -6,6 +6,7 @@ using MISA.PromontionProcess.BL.UserBL;
 using MISA.PromotionProcess.BL.RequestBL;
 using MISA.PromotionProcess.Common;
 using MISA.PromotionProcess.Common.DTO;
+using MISA.PromotionProcess.Common.Enums;
 using MISA.PromotionProcess.Common.Model;
 
 namespace MISA.PromotionProcess.API.Controllers
@@ -93,6 +94,20 @@ namespace MISA.PromotionProcess.API.Controllers
             try
             {
                 return StatusCode(StatusCodes.Status200OK, _requestBL.ApprovalRequests(requests));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, HandleError.GenerateExceptionResult(ex, HttpContext));
+            }
+        }
+
+        [HttpPut("Transfer")]
+        public IActionResult TransferRequest([FromBody] Guid[] requests, [FromQuery] Guid employeeIdChooser, [FromQuery] Level level)
+        {
+            try
+            {
+                return StatusCode(StatusCodes.Status200OK, _requestBL.TransferRequests(requests,employeeIdChooser,level));
             }
             catch (Exception ex)
             {
